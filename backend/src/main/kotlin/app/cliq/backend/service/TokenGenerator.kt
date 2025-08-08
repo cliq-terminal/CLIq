@@ -8,6 +8,7 @@ import java.util.UUID
 
 const val RANDOM_BYTES_LENGTH = 32
 const val EMAIL_VERIFICATION_TOKEN_LENGTH: UShort = 32U
+const val RESET_PASSWORD_TOKEN_LENGTH: UShort = 16U
 const val AUTH_VERIFICATION_TOKEN_LENGTH: UShort = 64U
 
 @Service
@@ -36,6 +37,8 @@ class TokenGenerator(
     }
 
     fun generateEmailVerificationToken(): String = generateToken(EMAIL_VERIFICATION_TOKEN_LENGTH)
+
+    fun generatePasswordResetToken(): String = generateToken(RESET_PASSWORD_TOKEN_LENGTH)
 
     fun generateAuthVerificationToken(): String = generateToken(AUTH_VERIFICATION_TOKEN_LENGTH)
 }
